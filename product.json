@@ -1,0 +1,19 @@
+{
+  "name": "Diff Checker Pro",
+  "slug": "diff-checker-pro",
+  "tagline": "Compare text, code, or JSON side-by-side with highlighted differences",
+  "description": "Compare text, code, or JSON side-by-side with highlighted differences",
+  "price": "9",
+  "category": "Developer Tools",
+  "features": [],
+  "tech_stack": "Vercel + Node.js",
+  "status": "ready_to_deploy",
+  "vercel_url": null,
+  "github_url": null,
+  "lemonsqueezy_product_id": null,
+  "webhook_url": null,
+  "created_cycle": null,
+  "deployed_cycle": null,
+  "checkout_url": null,
+  "spec_version": "1.0"
+}
