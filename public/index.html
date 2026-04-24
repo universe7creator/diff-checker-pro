@@ -2,62 +2,218 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <meta name="description" content="Professional Diff Checker tool for developers. Generate, convert, and validate instantly with a clean, modern interface.">
-    <meta name="keywords" content="diff, checker, diff tool, text comparison, file compare, developer tools, online tool, web utility">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="author" content="Universe7Creator">
-    <link rel="canonical" href="None">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Diff Checker tool for developers. Generate, convert, and validate instantly with a clean, modern interface.">
-    <meta name="keywords" content="diff, checker, diff tool, text comparison, file compare, developer tools, online tool, web utility">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="author" content="Universe7Creator">
-    <link rel="canonical" href="None">
   <title>Diff Checker Pro</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; color: #333; }
-    .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; text-align: center; color: white; }
-    h1 { font-size: 3rem; margin-bottom: 20px; }
-    p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; }
-    .cta { display: inline-block; background: white; color: #667eea; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
-    .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-  </style>
-<script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Diff Checker Pro",
-  "description": "Professional Diff Checker tool for developers. Generate, convert, and validate instantly with a clean, modern interface.",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "19.00",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "150"
-  },
-  "url": null
-}
-    </script>
-    </head>
-<body>
-  <div class="container">
-    <h1>Diff Checker Pro</h1>
-    <p>Compare text, code, or JSON side-by-side with highlighted differences</p>
-    <a href="#" class="cta" id="buyBtn">Get Started — 9</a>
-  </div>
-  <script>
-    const CHECKOUT_URL = window.__CHECKOUT_URL || null;
-    document.getElementById('buyBtn').addEventListener('click', (e) => {
-      e.preventDefault();
-      if (CHECKOUT_URL) window.open(CHECKOUT_URL, '_blank');
-      else alert('Store coming soon! Contact @OtonomUniverseCreator on Telegram.');
-    });
+  <meta name="description" content="Compare text, code, or JSON side-by-side with highlighted differences. Find additions, deletions, and changes instantly.">
+  <meta name="keywords" content="diff, checker, text comparison, code diff, file compare, developer tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="None">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Diff Checker Pro","description":"Compare text, code, or JSON side-by-side with highlighted differences","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"9","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"150"}}
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .mono { font-family: 'Fira Code', monospace; }
+    .diff-add { background: rgba(34, 197, 94, 0.15); border-left: 3px solid #22c55e; }
+    .diff-remove { background: rgba(239, 68, 68, 0.15); border-left: 3px solid #ef4444; }
+    .diff-equal { border-left: 3px solid transparent; }
+    .btn-active { background: rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.5); color: #a5b4fc; }
+  </style>
+</head>
+<body class="bg-[#0a0a0a] text-white min-h-screen">
+  <!-- Hero -->
+  <section class="min-h-[40vh] flex items-center justify-center px-6 py-16">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-transparent to-purple-600/20"></div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm mb-8">
+        <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>Developer Essential
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent">Diff Checker Pro</h1>
+      <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">Compare text, code, or JSON side-by-side with highlighted differences. Find exactly what changed.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#compare" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-semibold transition-all shadow-lg shadow-indigo-600/25">Start Comparing</a>
+        <button onclick="openCheckout()" class="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl font-semibold transition-all">Buy $9</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compare -->
+  <section id="compare" class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-10">Compare Anything</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <label class="text-sm text-gray-400">Original Text</label>
+            <div class="flex gap-2">
+              <button onclick="loadSample('original')" class="text-xs text-indigo-400 hover:text-indigo-300">Load Sample</button>
+              <button onclick="clearSide('left')" class="text-xs text-gray-500 hover:text-gray-300">Clear</button>
+            </div>
+          </div>
+          <textarea id="leftText" class="w-full h-48 bg-black/50 border border-white/10 rounded-xl p-4 mono text-sm focus:outline-none focus:border-indigo-500/50 text-white" placeholder="Paste original text here..."></textarea>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <label class="text-sm text-gray-400">Modified Text</label>
+            <div class="flex gap-2">
+              <button onclick="loadSample('modified')" class="text-xs text-indigo-400 hover:text-indigo-300">Load Sample</button>
+              <button onclick="clearSide('right')" class="text-xs text-gray-500 hover:text-gray-300">Clear</button>
+            </div>
+          </div>
+          <textarea id="rightText" class="w-full h-48 bg-black/50 border border-white/10 rounded-xl p-4 mono text-sm focus:outline-none focus:border-indigo-500/50 text-white" placeholder="Paste modified text here..."></textarea>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <button onclick="runDiff()" class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-semibold transition-all flex items-center gap-2">
+          <span>Compare</span>
+          <span id="diffSpinner" class="spinner hidden"></span>
+        </button>
+        <div class="flex items-center gap-2 text-sm">
+          <span class="inline-block w-3 h-3 rounded bg-green-500/60"></span><span class="text-gray-400">Added</span>
+          <span class="inline-block w-3 h-3 rounded bg-red-500/60"></span><span class="text-gray-400">Removed</span>
+        </div>
+      </div>
+
+      <div class="bg-black/50 border border-white/10 rounded-2xl p-6" id="diffStats" style="display:none">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex gap-6 text-sm">
+            <span class="text-green-400" id="addCount"></span>
+            <span class="text-red-400" id="removeCount"></span>
+          </div>
+          <button onclick="copyDiff()" class="text-sm text-indigo-400 hover:text-indigo-300">Copy Diff</button>
+        </div>
+        <div id="diffOutput" class="space-y-1 font-mono text-sm max-h-[400px] overflow-y-auto"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Simple Pricing</h2>
+      <div class="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-white/10 rounded-3xl p-8 max-w-md mx-auto">
+        <div class="text-5xl font-bold mb-2">$9</div>
+        <div class="text-gray-400 mb-6">One-time purchase</div>
+        <ul class="text-left space-y-3 mb-8 text-gray-300">
+          <li class="flex items-center gap-3"><span class="text-indigo-400">✓</span>Unlimited diffs</li>
+          <li class="flex items-center gap-3"><span class="text-indigo-400">✓</span>Side-by-side view</li>
+          <li class="flex items-center gap-3"><span class="text-indigo-400">✓</span>API access</li>
+          <li class="flex items-center gap-3"><span class="text-indigo-400">✓</span>Lifetime updates</li>
+        </ul>
+        <button onclick="openCheckout()" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-semibold transition-all">Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 px-6 border-t border-white/10 text-center text-gray-500 text-sm">
+    &copy; 2024 Diff Checker Pro. All rights reserved.
+  </footer>
+
+<script>
+const CHECKOUT_URL = window.__CHECKOUT_URL || 'https://buy.polar.sh/polar_cl_nEsbJlKAQmx6HwsA7CXx5pS7K5bJT6OAvoxyv2FTOTC';
+let lastDiffHtml = '';
+
+function openCheckout() { window.open(CHECKOUT_URL, '_blank'); }
+
+function clearSide(side) {
+  if (side === 'left') document.getElementById('leftText').value = '';
+  else document.getElementById('rightText').value = '';
+}
+
+function loadSample(side) {
+  if (side === 'original') {
+    document.getElementById('leftText').value = `function calculateTotal(items) {
+  let total = 0;
+  for (let i = 0; i < items.length; i++) {
+    total += items[i].price;
+  }
+  return total;
+}`;
+  } else {
+    document.getElementById('rightText').value = `function calculateTotal(items) {
+  let total = 0;
+  for (const item of items) {
+    total += item.price * item.quantity;
+  }
+  return total.toFixed(2);
+}`;
+  }
+}
+
+function computeDiff(lineLeft, lineRight) {
+  const leftLines = (lineLeft || '').split('\n');
+  const rightLines = (lineRight || '').split('\n');
+  const result = [];
+  let i = 0, j = 0;
+
+  while (i < leftLines.length || j < rightLines.length) {
+    if (i >= leftLines.length) {
+      result.push({ type: 'add', text: rightLines[j] }); j++;
+    } else if (j >= rightLines.length) {
+      result.push({ type: 'remove', text: leftLines[i] }); i++;
+    } else if (leftLines[i] === rightLines[j]) {
+      result.push({ type: 'equal', text: leftLines[i] }); i++; j++;
+    } else {
+      result.push({ type: 'remove', text: leftLines[i] });
+      result.push({ type: 'add', text: rightLines[j] });
+      i++; j++;
+    }
+  }
+  return result;
+}
+
+function runDiff() {
+  const left = document.getElementById('leftText').value;
+  const right = document.getElementById('rightText').value;
+  const spinner = document.getElementById('diffSpinner');
+  const stats = document.getElementById('diffStats');
+  const output = document.getElementById('diffOutput');
+
+  spinner.classList.remove('hidden');
+  stats.style.display = 'none';
+
+  setTimeout(() => {
+    const diff = computeDiff(left, right);
+    const adds = diff.filter(d => d.type === 'add').length;
+    const removes = diff.filter(d => d.type === 'remove').length;
+
+    document.getElementById('addCount').textContent = '+' + adds + ' additions';
+    document.getElementById('removeCount').textContent = '-' + removes + ' deletions';
+
+    output.innerHTML = diff.map(d => {
+      const cls = d.type === 'add' ? 'diff-add' : d.type === 'remove' ? 'diff-remove' : 'diff-equal';
+      const prefix = d.type === 'add' ? '+ ' : d.type === 'remove' ? '- ' : '  ';
+      return `<div class="${cls} px-3 py-1 mono text-gray-300">${prefix}${escapeHtml(d.text)}</div>`;
+    }).join('');
+
+    lastDiffHtml = output.innerHTML;
+    stats.style.display = 'block';
+    spinner.classList.add('hidden');
+  }, 50);
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function copyDiff() {
+  if (!lastDiffHtml) return;
+  navigator.clipboard.writeText(lastDiffHtml.replace(/<[^>]+>/g, '')).then(() => {
+    const btn = event.target;
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = orig, 1000);
+  });
+}
+</script>
+<style>
+.spinner { width: 16px; height: 16px; border: 2px solid transparent; border-top-color: currentColor; border-radius: 50%; animation: spin 0.6s linear infinite; display: inline-block; vertical-align: middle; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hidden { display: none; }
+</style>
 </body>
 </html>
